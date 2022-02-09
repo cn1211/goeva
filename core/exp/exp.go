@@ -29,7 +29,7 @@ func Try(fun func()) {
 	fun()
 }
 
-// TryWithErr  协程异常捕获
+// TryWithErr 协程异常捕获,并处理错误日志。
 func TryWithErr(fun func(), handle func(err error)) {
 	defer func() {
 		if err := recover(); err != nil {
