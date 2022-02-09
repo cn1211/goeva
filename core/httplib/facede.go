@@ -5,15 +5,19 @@ import (
 	"io/ioutil"
 )
 
-func Get(url string) []byte {
+func Get(url string) ([]byte, error) {
 	res, err := defaultClient.Get(url)
-	exp.CheckErr(err)
+	if err != nil {
+		return nil, err
+	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
-	exp.CheckErr(err)
+	if err != nil {
+		return nil, err
+	}
 
-	return body
+	return body, nil
 }
 
 func Post(url string, postData []byte) ([]byte, error) {
