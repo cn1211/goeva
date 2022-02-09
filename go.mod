@@ -1,4 +1,4 @@
-module github.com/goeva
+module github.com/cn1211/goeva
 
 go 1.17
 

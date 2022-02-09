@@ -1,7 +1,7 @@
 package retry
 
 import (
-	"github.com/goeva/core/errorx"
+	"github.com/cn1211/goeva/core/errorx"
 )
 
 const defaultRetryTimes = 3
